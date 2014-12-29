@@ -50,11 +50,15 @@ public class TitlePanel extends JPanel {
 		addTitleButton(); // 添加最大化最小化按钮
 	}
 
+	/**
+	 * paintComponent 在里面画背景图片的时候会很方便，不会覆盖掉关闭按钮
+	 * @see javax.swing.JComponent#paintComponent(java.awt.Graphics)
+	 */
 	@Override
-	public void paint(Graphics g) {
+	public void paintComponent(Graphics g) {
 		Graphics2D g2d = (Graphics2D)g;
 		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-		super.paint(g2d);
+		super.paintComponent(g2d);
 		g2d.setFont(TITLE_FONT);
 		g2d.setColor(TITLE_FORE_COLOR);
 	}
