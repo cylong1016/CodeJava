@@ -22,7 +22,7 @@ public class Frame extends JFrame {
 
 	/** serialVersionUID */
 	private static final long serialVersionUID = 5359481363535358093L;
-	
+
 	/*----------------------------Frame配置--------------------------------*/
 	/** 界面的宽 */
 	public static int WIDTH = 900;
@@ -42,16 +42,27 @@ public class Frame extends JFrame {
 	protected HyalineValue hy;
 
 	public Frame() {
-		hy = new HyalineValue();
+		hy = new HyalineValue();	// 需要在外部调用
 		// 标题栏
 		title = new TitlePanel(this);
-		this.add(title, BorderLayout.NORTH);
+		this.add(title, BorderLayout.NORTH); // 添加标题
+		this.setSize(WIDTH, HEIGHT);
+		this.setLocationRelativeTo(null); // 居中，要在设置大小之后 
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setUndecorated(true);
 		this.setOpacity(hyalineValue); // 设置透明
 		this.setVisible(true);
 		this.setDragable(); // 设置可以拖动
 		this.setOSStyle(); // 设置为当前系统风格
+	}
+
+	/**
+	 * 透明度渐变启动界面，需要外部或者子类自己调用
+	 * @author cylong
+	 * @version 2014年12月29日 下午7:54:19
+	 */
+	public void start() {
+		hy.start();
 	}
 
 	/**
