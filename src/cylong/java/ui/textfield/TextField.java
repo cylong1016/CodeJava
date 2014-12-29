@@ -17,9 +17,13 @@ public class TextField extends JTextField {
 	/** serialVersionUID */
 	private static final long serialVersionUID = -6857760594273517171L;
 
+	/** 鼠标监听 */
+	protected Listener listener;
+
 	public TextField() {
+		listener = new Listener();
 		this.setBorder(BorderFactory.createLineBorder(Color.LIGHT_GRAY));
-		this.addMouseListener(new Listener());
+		this.addMouseListener(listener);
 	}
 
 	private class Listener extends MouseAdapter {
