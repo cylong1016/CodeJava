@@ -13,7 +13,7 @@ import javax.swing.JPanel;
  * @author cylong
  * @version 2015年4月12日 上午1:18:20
  */
-public class Column extends Panel {
+public class Column extends JPanel {
 
 	/** serialVersionUID */
 	private static final long serialVersionUID = -5074200609980001743L;
@@ -32,6 +32,7 @@ public class Column extends Panel {
 
 	public Column(String name, double value, Color bgColor) {
 		this.value = value;
+		this.setOpaque(false);
 		this.setLayout(new BorderLayout());
 
 		nameLabel = new Label(name);

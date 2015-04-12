@@ -1,10 +1,14 @@
 package cylong.java.ui;
 
+import java.awt.Color;
 import java.awt.Dimension;
+import java.util.ArrayList;
 
 import javax.swing.JPanel;
 
 import cylong.java.ui.button.Button;
+import cylong.java.ui.chart.Chart;
+import cylong.java.ui.chart.Column;
 import cylong.java.ui.frame.Frame;
 import cylong.java.ui.textfield.TextField;
 
@@ -30,6 +34,17 @@ public class TestUIComp {
 		TextField textField = new TextField();
 		textField.setPreferredSize(dimen);
 		panel.add(textField);
+		
+		// 测试表格
+		ArrayList<Column> columns = new ArrayList<Column>();
+		columns.add(new Column("hhh1", 2, Color.blue));
+		columns.add(new Column("hhh2", 15, Color.blue));
+		columns.add(new Column("hhh3", 7, Color.blue));
+		columns.add(new Column("hhh4", 18, Color.blue));
+		columns.add(new Column("hhh5", 21.1, Color.blue));
+		Chart chart = new Chart("测试", columns, 21.1);
+		chart.setPreferredSize(new Dimension(809, 145));
+		panel.add(chart);
 		
 		frame.setVisible(true);
 		frame.start();
