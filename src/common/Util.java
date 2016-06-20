@@ -1,4 +1,4 @@
-package cylong.java.util;
+package common;
 
 /**
  * 一些通用的方法

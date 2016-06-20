@@ -1,4 +1,4 @@
-package cylong.java.util.sort;
+package cylong.java.sort;
 /**
 *作者：陈云龙
 *时间：2014/1/23

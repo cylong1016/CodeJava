@@ -1,4 +1,4 @@
-package cylong.java.util.sort;
+package cylong.java.sort;
 
 /**
  * 插入排序法
