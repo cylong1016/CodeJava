@@ -2,7 +2,10 @@ package cylong.java.jackson;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 /**
  * @see <a href=https://www.mkyong.com/java/jackson-2-convert-java-object-to-from-json>
@@ -17,6 +20,16 @@ public class Staff {
 	private String position;
 	private BigDecimal salary;
 	private List<String> skills;
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+	private Date date;
+
+	public Date getDate() {
+		return this.date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
 
 	public String getName() {
 		return this.name;
@@ -66,6 +79,7 @@ public class Staff {
 		staff.setAge(33);
 		staff.setPosition("Developer");
 		staff.setSalary(new BigDecimal("7500"));
+		staff.setDate(new Date());
 
 		List<String> skills = new ArrayList<>();
 		skills.add("java");

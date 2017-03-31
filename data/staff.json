@@ -3,5 +3,6 @@
   "age" : 33,
   "position" : "Developer",
   "salary" : 7500,
-  "skills" : [ "java", "python" ]
+  "skills" : [ "java", "python" ],
+  "date" : "2017-03-31 10:45:03"
 }
