@@ -21,6 +21,7 @@ public class JsonToJavaExample {
 	}
 
 	private static void run() {
+		
 		ObjectMapper mapper = new ObjectMapper();
 
 		try {
