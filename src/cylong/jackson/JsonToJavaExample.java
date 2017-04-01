@@ -35,7 +35,7 @@ public class JsonToJavaExample {
 			Staff staff1 = mapper.readValue(jsonInString, Staff.class);
 			System.out.println(staff1);
 
-			//Pretty print
+			// Pretty print
 			String prettyStaff1 = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(staff1);
 			System.out.println(prettyStaff1);
 
