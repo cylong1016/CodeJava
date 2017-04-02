@@ -16,7 +16,7 @@ public class Button extends JLabel {
 
 	/** serialVersionUID */
 	private static final long serialVersionUID = -5073422084920844212L;
-	
+
 	/*----------------------------通用按钮配置--------------------------------*/
 	/** button字体 */
 	public static Font BTN_FONT = new Font("黑体", Font.PLAIN, 16);
@@ -26,6 +26,7 @@ public class Button extends JLabel {
 	public static Color BTN_BACK_COLOR = Color.LIGHT_GRAY;
 	/** 移动到button上的背景颜色 */
 	public static Color ENTERED_BTN_BACK_COLOR = Color.GRAY;
+
 	/*----------------------------通用按钮配置--------------------------------*/
 
 	public Button(String text) {
@@ -42,31 +43,31 @@ public class Button extends JLabel {
 		this.setBackground(BTN_BACK_COLOR);
 		super.setEnabled(enabled);
 	}
-	
+
 	private class ButtonListener extends MouseAdapter {
 
 		@Override
 		public void mouseEntered(MouseEvent e) {
-			if(Button.this.isEnabled()) {
+			if (Button.this.isEnabled()) {
 				Button.this.setBackground(ENTERED_BTN_BACK_COLOR);
 			}
 		}
 
 		@Override
 		public void mouseExited(MouseEvent e) {
-			if(Button.this.isEnabled()) {
+			if (Button.this.isEnabled()) {
 				Button.this.setBackground(BTN_BACK_COLOR);
 			}
 		}
 
 		public void mousePressed(MouseEvent e) {
-			if(Button.this.isEnabled()) {
+			if (Button.this.isEnabled()) {
 				Button.this.setBackground(BTN_BACK_COLOR);
 			}
 		}
 
 		public void mouseReleased(MouseEvent e) {
-			if(Button.this.isEnabled()) {
+			if (Button.this.isEnabled()) {
 				Button.this.setBackground(ENTERED_BTN_BACK_COLOR);
 			}
 		}

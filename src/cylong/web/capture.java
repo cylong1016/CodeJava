@@ -13,7 +13,7 @@ import java.net.URL;
  * @version 2015年6月15日 下午9:42:35
  */
 public class capture {
-	
+
 	public static void main(String[] args) {
 		String URL = "http://www.baidu.com";
 		BufferedReader reader = getReader(URL);

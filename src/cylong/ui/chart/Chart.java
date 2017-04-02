@@ -21,19 +21,19 @@ public class Chart extends JPanel {
 
 	/** 标题字体 */
 	private Font titleFont = new Font("黑体", Font.PLAIN, 15);
-	
+
 	/** 柱状图内部的panel */
 	private InPanel inPanel;
 
 	/** 柱状图的所有列 */
 	private ArrayList<Column> columns;
-	
+
 	/** 内边距 */
 	private int padding = 30;
-	
+
 	/** 用来比较的最大数据范围，计算每一个柱的高 */
 	private double maxRange;
-	
+
 	// 决定还是 列间距 * 2 = 列宽度
 	/** 每列之间的间距 */
 	private int interval;
@@ -45,7 +45,7 @@ public class Chart extends JPanel {
 	 * @param columns 柱状图的全部柱子
 	 * @param maxRange 数据的最大范围，计算每个柱的比例
 	 * @author cylong
-	 * @version 2015年4月12日  上午3:08:12
+	 * @version 2015年4月12日 上午3:08:12
 	 */
 	public Chart(String title, ArrayList<Column> columns, double maxRange) {
 		this.columns = columns;
@@ -60,7 +60,7 @@ public class Chart extends JPanel {
 	public void setTitle(String title) {
 		this.setBorder(BorderFactory.createTitledBorder(getBorder(), title, TitledBorder.CENTER, TitledBorder.TOP, titleFont));
 	}
-	
+
 	/**
 	 * @see java.awt.Component#setBounds(int, int, int, int)
 	 */
@@ -79,7 +79,7 @@ public class Chart extends JPanel {
 
 		/** serialVersionUID */
 		private static final long serialVersionUID = -5964393499545913607L;
-		
+
 		public InPanel() {
 			this.setLayout(null);
 			this.setOpaque(false);
@@ -88,7 +88,7 @@ public class Chart extends JPanel {
 				this.add(columns.get(i));
 			}
 		}
-		
+
 		@Override
 		public void setBounds(int x, int y, int width, int height) {
 			super.setBounds(x, y, width, height);
@@ -100,7 +100,7 @@ public class Chart extends JPanel {
 				col.setBounds(i * columnWidth + (i + 1) * interval, height - colHeight, columnWidth, colHeight);
 			}
 		}
-		
+
 		/**
 		 * @see javax.swing.JComponent#paint(java.awt.Graphics)
 		 */

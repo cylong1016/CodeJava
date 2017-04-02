@@ -23,7 +23,7 @@ public class TitlePanel extends JPanel {
 
 	/** serialVersionUID */
 	private static final long serialVersionUID = -5595756092214353675L;
-	
+
 	/*----------------------------标题配置--------------------------------*/
 	/** 标题字体 */
 	public static Font TITLE_FONT = new Font("黑体", Font.PLAIN, 25);

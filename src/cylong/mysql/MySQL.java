@@ -23,9 +23,9 @@ public class MySQL {
 	 */
 	private void connectMySQL() {
 		try {
-			//加载驱动，这一句也可写为：Class.forName("com.mysql.jdbc.Driver");
+			// 加载驱动，这一句也可写为：Class.forName("com.mysql.jdbc.Driver");
 			Class.forName(MySQLConf.DRIVER);
-			//建立到MySQL的连接
+			// 建立到MySQL的连接
 			conn = DriverManager.getConnection(MySQLConf.URL, MySQLConf.USER, MySQLConf.PASSWORD);
 			if (!conn.isClosed()) {
 				System.out.println("Succeeded connecting to the Database!");

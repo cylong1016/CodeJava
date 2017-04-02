@@ -18,7 +18,7 @@ package egg;
 public class Egg {
 
 	private static final int N = 10000;
-	
+
 	public static void main(String[] args) {
 		for(int i = 9; i < N; i += 10) {
 			if (i % 6 == 3) {
@@ -29,7 +29,7 @@ public class Egg {
 				}
 			}
 		}
-		
+
 		System.out.println("前 " + N + " 以内的数。");
 	}
 }

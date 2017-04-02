@@ -33,20 +33,21 @@ public class TextButton extends JButton {
 		this.setFocusPainted(false);
 		this.setBounds(x, y, width, height);
 		this.setText(text);
-		this.setMargin(new Insets(0,0,0,0));
+		this.setMargin(new Insets(0, 0, 0, 0));
 		this.setFont(new Font("微软雅黑", 0, 14));
 		addListener();
 	}
-	
-	public void addListener(){
+
+	public void addListener() {
 		this.addMouseListener(new MouseAdapter() {
+
 			public void mousePressed(MouseEvent e) {
 				TextButton.this.setOpaque(true);
 				TextButton.this.setForeground(Color.white);
 				TextButton.this.setBackground(new Color(15, 24, 44));
 			}
 		});
-		
+
 	}
 
 	public void back() {

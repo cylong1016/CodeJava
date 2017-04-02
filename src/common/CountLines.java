@@ -1,6 +1,5 @@
 package common;
 
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -10,7 +9,7 @@ import java.io.IOException;
 /**
  * 计算一个工程的代码行数
  * @author cylong
- * @version Oct 28, 2014  6:27:00 PM
+ * @version Oct 28, 2014 6:27:00 PM
  */
 class CountLines {
 
@@ -66,9 +65,9 @@ class CountLines {
 	}
 
 	public int[] getOneFileLines(File file) {
-		int codeSum = 0;// 代码行数
-		int blankSum = 0;// 空白行数
-		int commentSum = 0;// 注释行数
+		int codeSum = 0;	// 代码行数
+		int blankSum = 0;	// 空白行数
+		int commentSum = 0;	// 注释行数
 		BufferedReader br = null;
 		try {
 			br = new BufferedReader(new FileReader(file));

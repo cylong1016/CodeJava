@@ -6,6 +6,7 @@ package cylong.mysql;
  * @version 2015年5月21日 下午8:33:15
  */
 public class MySQLConf {
+
 	// 驱动程序名
 	public static String DRIVER = "com.mysql.jdbc.Driver";
 	// URL指向要访问的数据库名nbalabala

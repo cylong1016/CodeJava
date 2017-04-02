@@ -24,17 +24,17 @@ public class TestUIComp {
 		Dimension dimen = new Dimension(80, 30);
 		JPanel panel = new JPanel();
 		frame.add(panel);
-		
+
 		// 测试自定义Button
 		Button btn = new Button("测试按钮");
 		btn.setPreferredSize(dimen);
 		panel.add(btn);
-		
+
 		// 测试自定义TextField
 		TextField textField = new TextField();
 		textField.setPreferredSize(dimen);
 		panel.add(textField);
-		
+
 		// 测试表格
 		ArrayList<Column> columns = new ArrayList<Column>();
 		columns.add(new Column("hhh1", 2, Color.blue));
@@ -45,7 +45,7 @@ public class TestUIComp {
 		Chart chart = new Chart("测试", columns, 21.1);
 		chart.setPreferredSize(new Dimension(809, 145));
 		panel.add(chart);
-		
+
 		frame.setVisible(true);
 		frame.start();
 	}
