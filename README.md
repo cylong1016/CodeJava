@@ -11,10 +11,9 @@
 - cylong.mail 邮件操作
 - cylong.mysql 连接 Mysql 数据库
 - cylong.sort 排序算法
-- cylong.ui
- + button 美化的按钮
- + chart 柱状图
- + frame 美化的 JFrame
- + textfield 美化的文本框
+- cylong.ui.button 美化的按钮
+- cylong.ui.chart 柱状图
+- cylong.ui.frame 美化的 JFrame
+- cylong.ui.textfield 美化的文本框
 - web 简单的网页抓取
 - xml Java 创建与解析 XML 文件
