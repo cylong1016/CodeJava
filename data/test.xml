@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<college>
+<!--学生0-->
+<student id="0">
+<name>cylong</name>
+<biography><![CDATA[Hello]]></biography>
+<age>24</age>
+</student>
+<!--学生1-->
+<student id="1">
+<name>cylong1</name>
+<biography><![CDATA[World]]></biography>
+<age>25</age>
+</student>
+</college>
