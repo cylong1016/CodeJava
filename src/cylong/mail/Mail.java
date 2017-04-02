@@ -21,7 +21,7 @@ public class Mail {
 
 	public static void main(String[] args) {
 		String from = "cylong1016@163.com";
-		String password = "lsy940815";
+		String password = "";
 		String address = "131250129@smail.nju.edu.cn";
 		String subject = "我是帅气的云龙";
 		String content = "喜欢可爱的思思姐";
