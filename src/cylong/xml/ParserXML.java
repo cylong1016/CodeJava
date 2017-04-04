@@ -32,22 +32,24 @@ public class ParserXML {
 	private static final String path = "data/test.xml";
 
 	public static void main(String[] args) {
-		createXML(path);
+		Document document = createXMLDocument();
+		writeXML(document, path);
 		parserXML(path);
 	}
 
 	/**
-	 * 创建 XML 文件
-	 * @param path
+	 * 创建 XML Document 对象
+	 * @return XML Document 对象
 	 * @author cylong
-	 * @version 2017年4月3日 上午2:48:21
+	 * @version 2017年4月5日 上午12:19:41
 	 */
-	private static void createXML(String path) {
+	private static Document createXMLDocument() {
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder builder = null;
+		Document document = null;
 		try {
 			builder = factory.newDocumentBuilder();
-			Document document = builder.newDocument();
+			document = builder.newDocument();
 			Element root = document.createElement("college");
 			document.appendChild(root);
 
@@ -79,15 +81,14 @@ public class ParserXML {
 			root.appendChild(student);
 			root.appendChild(document.createComment("学生1"));
 			root.appendChild(student1);
-
-			writeXML(document, path);
 		} catch (ParserConfigurationException e) {
 			e.printStackTrace();
 		}
+		return document;
 	}
 
 	/**
-	 * 将创建的 xml document 写入到文件中
+	 * 将创建的 XML Document 写入到文件中
 	 * @param document
 	 * @param path 文件路径
 	 * @author cylong
@@ -115,8 +116,8 @@ public class ParserXML {
 	}
 
 	/**
-	 * 解析 XML 文件
-	 * @param path
+	 * 解析 XML 文档
+	 * @param path XML 文档路径
 	 * @author cylong
 	 * @version 2017年4月3日 上午2:48:53
 	 */
