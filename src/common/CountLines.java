@@ -2,9 +2,8 @@ package common;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
+import java.util.Arrays;
 
 /**
  * 计算一个工程的代码行数
@@ -22,56 +21,45 @@ class CountLines {
 	}
 
 	/** 代码行数 */
-	int codeSum = 0;
+    private int codeSum = 0;
 	/** 空白行数 */
-	int blankSum = 0;
+    private int blankSum = 0;
 	/** 注释行数 */
-	int commentSum = 0;
+    private int commentSum = 0;
 
-	public CountLines(String filePath) {
-		try {
-			getAllLines(filePath);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-	}
+	private CountLines(String filePath) {
+        getAllLines(filePath);
+    }
 
-	public int getAllLines(String filePath) throws FileNotFoundException {
-		try {
-			File file = new File(filePath);
-			if (file.isDirectory()) {// 判断是否是文件夹
-				File[] codeFiles = file.listFiles();
-				int s = codeFiles.length;
-				for(int i = 0; i < s; i++) {
-					getAllLines(codeFiles[i].getPath());
-				}
-			} else {
-				// 判断是否是java文件，除去本文件
-				if (file.getName().endsWith(".java")
-					&& !file.getName().equals(this.getClass().toString().split("\\.")[1] + ".java")) {
-					// 输出java文件名称
-					// System.out.println(file.getName());
-					codeSum += getOneFileLines(file)[0];
-					blankSum += getOneFileLines(file)[1];
-					commentSum += getOneFileLines(file)[2];
-				}
+	private int getAllLines(String filePath) {
+        File file = new File(filePath);
+        if (file.isDirectory()) {// 判断是否是文件夹
+            File[] codeFiles = file.listFiles();
+			if (codeFiles != null) {
+				Arrays.stream(codeFiles).map(File::getPath).forEach(this::getAllLines);
 			}
-		} catch (FileNotFoundException e4) {
-			e4.printStackTrace();
-		} catch (@SuppressWarnings("hiding") IOException e1) {
-			e1.printStackTrace();
-		}
-		return codeSum;
+		} else {
+            // 判断是否是java文件，除去本文件
+            if (file.getName().endsWith(".java")
+                && !file.getName().equals(this.getClass().toString().split("\\.")[1] + ".java")) {
+                // 输出java文件名称
+                // System.out.println(file.getName());
+                codeSum += getOneFileLines(file)[0];
+                blankSum += getOneFileLines(file)[1];
+                commentSum += getOneFileLines(file)[2];
+            }
+        }
+        return codeSum;
 	}
 
-	public int[] getOneFileLines(File file) {
+	private int[] getOneFileLines(File file) {
 		int codeSum = 0;	// 代码行数
 		int blankSum = 0;	// 空白行数
 		int commentSum = 0;	// 注释行数
-		BufferedReader br = null;
+		BufferedReader br;
 		try {
 			br = new BufferedReader(new FileReader(file));
-			String line = null;
+			String line;
 			while((line = br.readLine()) != null) {
 				line = line.trim();
 				if (line.matches("^[\\s&&[^\\n]]*$")) {
