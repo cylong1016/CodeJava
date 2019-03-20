@@ -13,6 +13,7 @@
 - cylong.sort 排序算法
 - cylong.web 简单的网页抓取
 - cylong.xml Java 创建与解析 XML 文件
+- cylong.lambda Lambda表达式相关
 - cylong.ui.button 美化的按钮
 - cylong.ui.chart 柱状图
 - cylong.ui.frame 美化的 JFrame
